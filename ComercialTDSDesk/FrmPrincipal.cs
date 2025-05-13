@@ -10,11 +10,33 @@ using System.Windows.Forms;
 
 namespace ComercialTDSDesk
 {
-    public partial class FrmPrincipal: Form
+    public partial class FrmPrincipal : Form
     {
         public FrmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new();
+            Hide();
+            frmLogin.ShowDialog();
+            if (Program.UsuarioLogado.Id > 0)
+            {
+                tsslUsuarioLogado.Text = Program.UsuarioLogado.Nome + " - " + Program.UsuarioLogado.Nivel.Nome;
+
+
+            }
+            Show();
+        }
+
+        private void trocarDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLlogin= new();
+            frmLlogin.bntCancelar.Text = "Sair";
+            frmLlogin.ShowDialog();
+            tsslUsuarioLogado.Text = Program.UsuarioLogado.Nome + " - " + Program.UsuarioLogado.Nivel.Nome;
         }
     }
 }
