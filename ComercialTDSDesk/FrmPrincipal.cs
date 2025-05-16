@@ -29,14 +29,56 @@ namespace ComercialTDSDesk
 
             }
             Show();
+
+            // chamada do panel
+
         }
+        private void AssociaPanel(Form form)
+        {
+
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.MaximizeBox = true;
+            form.AutoSize = true;
+            form.Size = pnlCentral.Size;
+            form.Controls.Clear();
+            pnlCentral.Controls.Clear();
+            pnlCentral.Controls.Add(form);
+
+            form.Show();
+            pnlCentral.Visible = true;
+        }
+
 
         private void trocarDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmLogin frmLlogin= new();
+            FrmLogin frmLlogin = new();
             frmLlogin.bntCancelar.Text = "Sair";
             frmLlogin.ShowDialog();
             tsslUsuarioLogado.Text = Program.UsuarioLogado.Nome + " - " + Program.UsuarioLogado.Nivel.Nome;
+        }
+
+        private void tsslUsuarioLogado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void niveisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //FrmNivel frmNivel = new FrmNivel();
+            //frmNivel.MdiParent = this;
+            //frmNivel.Show();
+            AssociaPanel(new FrmNivel());
+        }
+
+        private void incluirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AssociaPanel(new FrmNivel());
         }
     }
 }

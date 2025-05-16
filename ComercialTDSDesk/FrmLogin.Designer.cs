@@ -35,11 +35,12 @@
             chkExibeSEnha = new CheckBox();
             label1 = new Label();
             label2 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // bntEntrar
             // 
-            bntEntrar.Location = new Point(226, 196);
+            bntEntrar.Location = new Point(269, 259);
             bntEntrar.Name = "bntEntrar";
             bntEntrar.Size = new Size(75, 23);
             bntEntrar.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             // bntCancelar
             // 
-            bntCancelar.Location = new Point(388, 197);
+            bntCancelar.Location = new Point(431, 260);
             bntCancelar.Name = "bntCancelar";
             bntCancelar.Size = new Size(75, 23);
             bntCancelar.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(226, 89);
+            txtEmail.Location = new Point(269, 152);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(237, 23);
             txtEmail.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(226, 143);
+            txtSenha.Location = new Point(269, 206);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(237, 23);
             txtSenha.TabIndex = 3;
@@ -76,7 +77,7 @@
             // chkExibeSEnha
             // 
             chkExibeSEnha.AutoSize = true;
-            chkExibeSEnha.Location = new Point(374, 172);
+            chkExibeSEnha.Location = new Point(417, 235);
             chkExibeSEnha.Name = "chkExibeSEnha";
             chkExibeSEnha.Size = new Size(89, 19);
             chkExibeSEnha.TabIndex = 4;
@@ -87,7 +88,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(267, 28);
+            label1.Location = new Point(310, 91);
             label1.Name = "label1";
             label1.Size = new Size(141, 14);
             label1.TabIndex = 5;
@@ -97,11 +98,21 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(288, 60);
+            label2.Location = new Point(331, 123);
             label2.Name = "label2";
             label2.Size = new Size(89, 15);
             label2.TabIndex = 6;
             label2.Text = "Acesso System";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(557, 316);
+            button1.Name = "button1";
+            button1.Size = new Size(84, 23);
+            button1.TabIndex = 7;
+            button1.Text = "info";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FrmLogin
             // 
@@ -110,6 +121,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = bntCancelar;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(chkExibeSEnha);
@@ -135,5 +147,6 @@
         private CheckBox chkExibeSEnha;
         private Label label1;
         private Label label2;
+        private Button button1;
     }
 }

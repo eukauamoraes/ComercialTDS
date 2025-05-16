@@ -1,5 +1,8 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
+
+
 
 namespace ComercialTDSClass
 {
@@ -63,15 +66,21 @@ namespace ComercialTDSClass
         /// Obtém uma lista de niveis do banco de dados
         /// </summary>
         /// <returns></returns>
-        public static List<Nivel> ObeterLista()
+        public static List<Nivel> ObterLista()  
         {
             List<Nivel> niveis = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * From nievis order by nome";
+            cmd.CommandText = "select * from niveis order by nome";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                niveis.Add(new(dr.GetInt32(0), dr.GetString(1), dr.GetString(2)));
+                niveis.Add(new Nivel(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2))
+                    );
+                dr.Close(); // Abriu o dr Fechar para abrir um novo  select ou comando de banco
+                cmd.Connection.Close(); // fechar a conexão
             }
             return niveis;
         }
