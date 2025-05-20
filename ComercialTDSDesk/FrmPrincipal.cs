@@ -26,11 +26,8 @@ namespace ComercialTDSDesk
             {
                 tsslUsuarioLogado.Text = Program.UsuarioLogado.Nome + " - " + Program.UsuarioLogado.Nivel.Nome;
 
-
             }
             Show();
-
-            // chamada do panel
 
         }
         private void AssociaPanel(Form form)
@@ -44,7 +41,6 @@ namespace ComercialTDSDesk
             form.Controls.Clear();
             pnlCentral.Controls.Clear();
             pnlCentral.Controls.Add(form);
-
             form.Show();
             pnlCentral.Visible = true;
         }
@@ -70,15 +66,25 @@ namespace ComercialTDSDesk
 
         private void niveisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmNivel frmNivel = new FrmNivel();
-            //frmNivel.MdiParent = this;
-            //frmNivel.Show();
-            AssociaPanel(new FrmNivel());
+            FrmNivel frmNivel = new FrmNivel();
+            frmNivel.MdiParent = this;
+            frmNivel.Show();
+            //ssociaPanel(new FrmNivel());
         }
 
         private void incluirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AssociaPanel(new FrmNivel());
+        }
+
+        private void pnlCentral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AssociaPanel(new FrmProdutoListar());
         }
     }
 }

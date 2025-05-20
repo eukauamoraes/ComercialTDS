@@ -59,5 +59,15 @@ namespace ComercialTDSDesk.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagem_C_ {
+            get {
+                object obj = ResourceManager.GetObject("imagem C#", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

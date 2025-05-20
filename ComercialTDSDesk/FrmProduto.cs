@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ComercialTDSDesk
 {
-    public partial class FrmProduto: Form
+    public partial class FrmProduto : Form
     {
         public FrmProduto()
         {
             InitializeComponent();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
