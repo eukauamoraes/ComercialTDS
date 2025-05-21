@@ -18,9 +18,32 @@ namespace ComercialTDSDesk
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void btnCarregarImagem_Click(object sender, EventArgs e)
         {
 
+        }
+        
+         
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            byte[] imgBytes;
+            MemoryStream ms = new();
+            picImagem.Image.Save(ms, picImagem.Image.RawFormat);
+            imgBytes = ms.ToArray();
+
+            Produto produto = new(
+                txtCodBarras.Text,
+                txtDescricao.Text,
+                (double)nudValorUnit.Value,
+                txtUnidadeVenda.Text,
+                Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
+                (double)nudEstoqueMinimo.Value,
+                (double)nudClasseDesconto.Value,
+                imgBytes
+                );
+            produto.Inserir();
+            if (produto.Id > 0)
+                MessageBox.Show($"Produto {produto.Id} gravado com sucesso!");
         }
 
         private void FrmProduto_Load(object sender, EventArgs e)
@@ -28,12 +51,19 @@ namespace ComercialTDSDesk
             cmbCategoria.DataSource = Categoria.ObterLista();
             cmbCategoria.DisplayMember = "Nome";
             cmbCategoria.ValueMember = "Id";
-
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void nudValorUnit_Enter(object sender, EventArgs e)
         {
-            
+            nudValorUnit.Select(0, 9);
+        }
+
+        private void FrmProduto_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
-}
+} 
+            
+
+        
