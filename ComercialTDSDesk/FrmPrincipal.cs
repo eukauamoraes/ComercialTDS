@@ -69,19 +69,10 @@ namespace ComercialTDSDesk
         {
             AssociaPanel(new FrmUsuario());
         }
-
-
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
 
         {
             AssociaPanel(new FrmProduto());
-        }
-
-
-        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AssociaPanel(new FrmCategoria());
-
         }
 
         private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -89,17 +80,39 @@ namespace ComercialTDSDesk
             AssociaPanel(new FrmProdutoListar());
         }
 
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AssociaPanel(new FrmCategoria());
         }
 
+        private void categoriasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AssociaPanel(new FrmCategoria());
+        }
         private void pnlCentral_Paint(object sender, PaintEventArgs e)
         {
 
+
         }
+
+    
     }
 }
+
+
+
+
+   
+        
+
+
+
+            
+
+
+
+
+      
 
 
         

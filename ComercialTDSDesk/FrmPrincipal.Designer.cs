@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             menuStrip1 = new MenuStrip();
+            conficraçõesToolStripMenuItem = new ToolStripMenuItem();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             produtosToolStripMenuItem = new ToolStripMenuItem();
@@ -46,6 +47,7 @@
             incluirToolStripMenuItem1 = new ToolStripMenuItem();
             listarToolStripMenuItem1 = new ToolStripMenuItem();
             nveisToolStripMenuItem = new ToolStripMenuItem();
+            sairToolStripMenuItem1 = new ToolStripMenuItem();
             operaçãoToolStripMenuItem = new ToolStripMenuItem();
             pedidosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem = new ToolStripMenuItem();
@@ -61,8 +63,6 @@
             vendasToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem2 = new ToolStripMenuItem();
             emitirNotaToolStripMenuItem = new ToolStripMenuItem();
-            conficraçõesToolStripMenuItem = new ToolStripMenuItem();
-            sairToolStripMenuItem1 = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             tsslUsuarioLogado = new ToolStripStatusLabel();
@@ -81,6 +81,12 @@
             menuStrip1.Size = new Size(1356, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // conficraçõesToolStripMenuItem
+            // 
+            conficraçõesToolStripMenuItem.Name = "conficraçõesToolStripMenuItem";
+            conficraçõesToolStripMenuItem.Size = new Size(96, 20);
+            conficraçõesToolStripMenuItem.Text = "Con&figurações";
             // 
             // cadastrosToolStripMenuItem
             // 
@@ -105,32 +111,33 @@
             // incluirToolStripMenuItem
             // 
             incluirToolStripMenuItem.Name = "incluirToolStripMenuItem";
-            incluirToolStripMenuItem.Size = new Size(134, 22);
+            incluirToolStripMenuItem.Size = new Size(180, 22);
             incluirToolStripMenuItem.Text = "&Incluir";
             // 
             // listarToolStripMenuItem
             // 
             listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            listarToolStripMenuItem.Size = new Size(134, 22);
+            listarToolStripMenuItem.Size = new Size(180, 22);
             listarToolStripMenuItem.Text = "&Listar";
             listarToolStripMenuItem.Click += listarToolStripMenuItem_Click;
             // 
             // forncedorToolStripMenuItem
             // 
             forncedorToolStripMenuItem.Name = "forncedorToolStripMenuItem";
-            forncedorToolStripMenuItem.Size = new Size(134, 22);
+            forncedorToolStripMenuItem.Size = new Size(180, 22);
             forncedorToolStripMenuItem.Text = "&Fornecedor";
             // 
             // categoriaToolStripMenuItem
             // 
             categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            categoriaToolStripMenuItem.Size = new Size(134, 22);
+            categoriaToolStripMenuItem.Size = new Size(180, 22);
             categoriaToolStripMenuItem.Text = "&Categoria";
+            categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
             // 
             // estoqueToolStripMenuItem
             // 
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(134, 22);
+            estoqueToolStripMenuItem.Size = new Size(180, 22);
             estoqueToolStripMenuItem.Text = "&Estoque";
             // 
             // categoriasToolStripMenuItem
@@ -138,6 +145,7 @@
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
             categoriasToolStripMenuItem.Size = new Size(180, 22);
             categoriasToolStripMenuItem.Text = "&Categorias";
+            categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click_1;
             // 
             // fornecedoresToolStripMenuItem
             // 
@@ -168,22 +176,29 @@
             // incluirToolStripMenuItem1
             // 
             incluirToolStripMenuItem1.Name = "incluirToolStripMenuItem1";
-            incluirToolStripMenuItem1.Size = new Size(107, 22);
+            incluirToolStripMenuItem1.Size = new Size(180, 22);
             incluirToolStripMenuItem1.Text = "&Incluir";
             incluirToolStripMenuItem1.Click += incluirToolStripMenuItem1_Click;
             // 
             // listarToolStripMenuItem1
             // 
             listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            listarToolStripMenuItem1.Size = new Size(107, 22);
+            listarToolStripMenuItem1.Size = new Size(180, 22);
             listarToolStripMenuItem1.Text = "&Listar";
+            listarToolStripMenuItem1.Click += listarToolStripMenuItem1_Click;
             // 
             // nveisToolStripMenuItem
             // 
             nveisToolStripMenuItem.Name = "nveisToolStripMenuItem";
-            nveisToolStripMenuItem.Size = new Size(107, 22);
+            nveisToolStripMenuItem.Size = new Size(180, 22);
             nveisToolStripMenuItem.Text = "&Níveis";
             nveisToolStripMenuItem.Click += nveisToolStripMenuItem_Click;
+            // 
+            // sairToolStripMenuItem1
+            // 
+            sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
+            sairToolStripMenuItem1.Size = new Size(71, 20);
+            sairToolStripMenuItem1.Text = "&Relatórios";
             // 
             // operaçãoToolStripMenuItem
             // 
@@ -279,18 +294,6 @@
             emitirNotaToolStripMenuItem.Name = "emitirNotaToolStripMenuItem";
             emitirNotaToolStripMenuItem.Size = new Size(134, 22);
             emitirNotaToolStripMenuItem.Text = "&Emitir Nota";
-            // 
-            // conficraçõesToolStripMenuItem
-            // 
-            conficraçõesToolStripMenuItem.Name = "conficraçõesToolStripMenuItem";
-            conficraçõesToolStripMenuItem.Size = new Size(96, 20);
-            conficraçõesToolStripMenuItem.Text = "Con&figurações";
-            // 
-            // sairToolStripMenuItem1
-            // 
-            sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
-            sairToolStripMenuItem1.Size = new Size(71, 20);
-            sairToolStripMenuItem1.Text = "&Relatórios";
             // 
             // sairToolStripMenuItem
             // 
