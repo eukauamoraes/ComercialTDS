@@ -140,13 +140,13 @@ namespace ComercialTDSClass
                 cmd.Connection.Close();
                 return produto;
             }
-            public static List<Produto> ObterLista(int id)
+            public static List<Produto> ObterLista()
             {
                 List<Produto> produtos = new();
                 var cmd = Banco.Abrir();
-                cmd.CommandText = $"select * from produto whre id = {id}";
+                cmd.CommandText = $"select * from produto order by descricao";
                 var dr = cmd.ExecuteReader();
-                if (dr.Read())
+                while (dr.Read())
                 {
                     produtos.Add(new(
                         dr.GetInt32(0),
@@ -168,6 +168,6 @@ namespace ComercialTDSClass
             }
 
 
-
         }
+
     }

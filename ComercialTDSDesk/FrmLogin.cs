@@ -31,12 +31,26 @@ namespace ComercialTDSDesk
         private void bntEntrar_Click(object sender, EventArgs e)
         {
             Program.UsuarioLogado = Usuario.EfatuarLogin(txtEmail.Text, txtSenha.Text);
-            Close();
+            if (Program.UsuarioLogado.Id > 0)
+            {
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Emial e/ou senha incorretos \n ou usuario não cadastrado");
+                txtEmail.Focus();
+                txtEmail.SelectAll();
+                
+            }
+          
         }
 
         private void bntCancelar_Click(object sender, EventArgs e)
         {
-
+            if (bntCancelar.Text ==  "&Voltar")
+                Close();
+            else
+                Application.Exit();
 
         }
 
@@ -53,13 +67,14 @@ namespace ComercialTDSDesk
                     MessageBox.Show(ip.ToString());
 
                 }
-                {
-
-                }
-
 
             }
         }
     }
 }
+
+
+
+
+
 

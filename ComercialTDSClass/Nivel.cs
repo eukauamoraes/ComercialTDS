@@ -72,7 +72,7 @@ namespace ComercialTDSClass
             var cmd = Banco.Abrir();
             cmd.CommandText = "select * from niveis order by nome";
             var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
                 niveis.Add(new Nivel(
                     dr.GetInt32(0),

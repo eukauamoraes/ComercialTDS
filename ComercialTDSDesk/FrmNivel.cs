@@ -93,15 +93,13 @@ namespace ComercialTDSDesk
             // MessageBox.Show({$"nivel.Id} {nivel.Nome} {nivel.Sigla}");
         }
 
-        private void dgvNiveis_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             txtNome.ReadOnly = false;
             txtSigla.ReadOnly = false;
+            btnEditar.Enabled = false;
             btnGravar.Enabled = true;
         }
 
@@ -111,6 +109,11 @@ namespace ComercialTDSDesk
         }
 
         private void FrmNivel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
         {
 
         }

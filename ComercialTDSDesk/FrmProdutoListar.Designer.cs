@@ -52,6 +52,7 @@
             dgvProduto.Size = new Size(494, 300);
             dgvProduto.TabIndex = 0;
             dgvProduto.CellClick += dgvProduto_CellClick;
+            dgvProduto.CellContentClick += dgvProduto_CellContentClick;
             // 
             // clnId
             // 
@@ -94,6 +95,7 @@
             picImagem.SizeMode = PictureBoxSizeMode.StretchImage;
             picImagem.TabIndex = 9;
             picImagem.TabStop = false;
+            picImagem.Click += picImagem_Click;
             // 
             // FrmProdutoListar
             // 

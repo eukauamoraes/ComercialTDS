@@ -122,6 +122,7 @@
             // picImagem
             // 
             picImagem.BorderStyle = BorderStyle.FixedSingle;
+            picImagem.Image = Properties.Resources.imagem_C_;
             picImagem.Location = new Point(455, 12);
             picImagem.Name = "picImagem";
             picImagem.Size = new Size(150, 150);
@@ -144,6 +145,7 @@
             btnSalvar.Size = new Size(150, 35);
             btnSalvar.TabIndex = 10;
             btnSalvar.Text = "&Salvar";
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnEditar
             // 
@@ -252,6 +254,7 @@
             Name = "FrmProduto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Produto";
+            Load += FrmProduto_Load;
             ((System.ComponentModel.ISupportInitialize)nudValorUnit).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudEstoqueMinimo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudClasseDesconto).EndInit();

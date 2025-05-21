@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComercialTDSClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace ComercialTDSDesk
             foreach (var item in lista)
             {
                 dgvProduto.Rows.Add();
-                dgvProduto.Rows[linha].Cells[0].Value = item.id;
+                dgvProduto.Rows[linha].Cells[0].Value = item.Id;
                 dgvProduto.Rows[linha].Cells[1].Value = item.CodBarras;
                 dgvProduto.Rows[linha].Cells[2].Value = item.Descricao;
                 dgvProduto.Rows[linha].Cells[3].Value = item.ValorUnit;
@@ -37,6 +38,28 @@ namespace ComercialTDSDesk
         }
 
         private void dgvProduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var produto = Produto.ObterPorId(Convert.ToInt32(dgvProduto.Rows[dgvProduto.CurrentRow.Index].Cells[0].Value));
+            using (MemoryStream ms = new MemoryStream(produto.Imagem))
+            {
+                picImagem.Image = Image.FromStream(ms);
+                picImagem.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+
+        }
+
+        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var produto = Produto.ObterPorId(Convert.ToInt32(dgvProduto.Rows[dgvProduto.CurrentRow.Index].Cells[0].Value));
+            using (MemoryStream ms = new MemoryStream(produto.Imagem))
+            {
+                picImagem.Image = Image.FromStream(ms);
+                picImagem.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+
+        }
+
+        private void picImagem_Click(object sender, EventArgs e)
         {
 
         }

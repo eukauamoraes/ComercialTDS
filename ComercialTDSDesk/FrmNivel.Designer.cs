@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNivel));
             btnGravar = new Button();
             btnEditar = new Button();
             btnCancelar = new Button();
@@ -118,7 +119,6 @@
             dgvNiveis.ReadOnly = true;
             dgvNiveis.Size = new Size(297, 198);
             dgvNiveis.TabIndex = 10;
-            dgvNiveis.CellContentClick += dgvNiveis_CellContentClick;
             dgvNiveis.CellDoubleClick += dgvNiveis_CellDoubleClick;
             // 
             // clnID
@@ -148,6 +148,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 23);
             txtId.TabIndex = 11;
+            txtId.TextChanged += txtId_TextChanged;
             // 
             // FrmNivel
             // 
@@ -163,6 +164,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnEditar);
             Controls.Add(btnGravar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmNivel";
             Text = "FrmNivel";
             Load += FrmNivel_Load;
