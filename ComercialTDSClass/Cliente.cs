@@ -8,7 +8,7 @@ using System.Data;
 
 namespace ComercialTDSClass
 {
-     class Cliente
+     public class Cliente
     {
         
 

@@ -46,7 +46,7 @@
             // 
             // btnGravar
             // 
-            btnGravar.Location = new Point(68, 255);
+            btnGravar.Location = new Point(82, 244);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(75, 23);
             btnGravar.TabIndex = 0;
@@ -57,7 +57,7 @@
             // btnEditar
             // 
             btnEditar.Enabled = false;
-            btnEditar.Location = new Point(172, 255);
+            btnEditar.Location = new Point(186, 244);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(263, 255);
+            btnCancelar.Location = new Point(277, 244);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 2;
@@ -77,14 +77,14 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(147, 148);
+            txtNome.Location = new Point(161, 137);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(191, 23);
             txtNome.TabIndex = 4;
             // 
             // txtSigla
             // 
-            txtSigla.Location = new Point(147, 206);
+            txtSigla.Location = new Point(161, 195);
             txtSigla.Name = "txtSigla";
             txtSigla.Size = new Size(75, 23);
             txtSigla.TabIndex = 5;
@@ -92,7 +92,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(103, 151);
+            label2.Location = new Point(117, 140);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 8;
@@ -101,7 +101,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(109, 214);
+            label1.Location = new Point(123, 203);
             label1.Name = "label1";
             label1.Size = new Size(32, 15);
             label1.TabIndex = 9;
@@ -114,7 +114,7 @@
             dgvNiveis.AllowUserToDeleteRows = false;
             dgvNiveis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNiveis.Columns.AddRange(new DataGridViewColumn[] { clnID, clnNome, clnSigla });
-            dgvNiveis.Location = new Point(369, 80);
+            dgvNiveis.Location = new Point(383, 69);
             dgvNiveis.Name = "dgvNiveis";
             dgvNiveis.ReadOnly = true;
             dgvNiveis.Size = new Size(297, 198);
@@ -144,7 +144,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(147, 91);
+            txtId.Location = new Point(161, 80);
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 23);
             txtId.TabIndex = 11;

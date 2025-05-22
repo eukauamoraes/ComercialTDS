@@ -40,9 +40,9 @@
             // 
             // bntEntrar
             // 
-            bntEntrar.Location = new Point(269, 259);
+            bntEntrar.Location = new Point(269, 276);
             bntEntrar.Name = "bntEntrar";
-            bntEntrar.Size = new Size(75, 23);
+            bntEntrar.Size = new Size(75, 25);
             bntEntrar.TabIndex = 0;
             bntEntrar.Text = "&Entrar";
             bntEntrar.UseVisualStyleBackColor = true;
@@ -50,9 +50,9 @@
             // 
             // bntCancelar
             // 
-            bntCancelar.Location = new Point(431, 260);
+            bntCancelar.Location = new Point(431, 277);
             bntCancelar.Name = "bntCancelar";
-            bntCancelar.Size = new Size(75, 23);
+            bntCancelar.Size = new Size(75, 25);
             bntCancelar.TabIndex = 1;
             bntCancelar.Text = "&Cancelar";
             bntCancelar.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(269, 152);
+            txtEmail.Location = new Point(269, 162);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(237, 23);
             txtEmail.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(269, 206);
+            txtSenha.Location = new Point(269, 220);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(237, 23);
             txtSenha.TabIndex = 3;
@@ -77,9 +77,9 @@
             // chkExibeSEnha
             // 
             chkExibeSEnha.AutoSize = true;
-            chkExibeSEnha.Location = new Point(417, 235);
+            chkExibeSEnha.Location = new Point(417, 251);
             chkExibeSEnha.Name = "chkExibeSEnha";
-            chkExibeSEnha.Size = new Size(89, 19);
+            chkExibeSEnha.Size = new Size(90, 20);
             chkExibeSEnha.TabIndex = 4;
             chkExibeSEnha.Text = "Exibir Senha";
             chkExibeSEnha.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(310, 91);
+            label1.Location = new Point(310, 97);
             label1.Name = "label1";
             label1.Size = new Size(141, 14);
             label1.TabIndex = 5;
@@ -97,18 +97,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(331, 123);
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(333, 127);
             label2.Name = "label2";
-            label2.Size = new Size(89, 15);
+            label2.Size = new Size(84, 15);
             label2.TabIndex = 6;
             label2.Text = "Acesso System";
             // 
             // button1
             // 
-            button1.Location = new Point(557, 316);
+            button1.Location = new Point(557, 337);
             button1.Name = "button1";
-            button1.Size = new Size(84, 23);
+            button1.Size = new Size(84, 25);
             button1.TabIndex = 7;
             button1.Text = "info";
             button1.UseVisualStyleBackColor = true;
@@ -117,10 +117,10 @@
             // FrmLogin
             // 
             AcceptButton = bntEntrar;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = bntCancelar;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 480);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -129,6 +129,7 @@
             Controls.Add(txtEmail);
             Controls.Add(bntCancelar);
             Controls.Add(bntEntrar);
+            Font = new Font("Segoe UI Variable Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmLogin";

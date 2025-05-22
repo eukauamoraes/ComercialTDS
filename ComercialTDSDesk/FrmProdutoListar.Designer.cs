@@ -44,7 +44,7 @@
             dgvProduto.AllowUserToDeleteRows = false;
             dgvProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProduto.Columns.AddRange(new DataGridViewColumn[] { clnId, clnCodBar, clnDescricao, clnValorUnit });
-            dgvProduto.Location = new Point(57, 51);
+            dgvProduto.Location = new Point(35, 63);
             dgvProduto.Name = "dgvProduto";
             dgvProduto.ReadOnly = true;
             dgvProduto.RowHeadersVisible = false;
@@ -89,7 +89,7 @@
             // 
             picImagem.BorderStyle = BorderStyle.FixedSingle;
             picImagem.Image = Properties.Resources.imagem_C_;
-            picImagem.Location = new Point(583, 51);
+            picImagem.Location = new Point(561, 63);
             picImagem.Name = "picImagem";
             picImagem.Size = new Size(300, 300);
             picImagem.SizeMode = PictureBoxSizeMode.StretchImage;

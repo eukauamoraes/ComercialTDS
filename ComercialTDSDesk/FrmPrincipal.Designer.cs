@@ -185,7 +185,7 @@
             listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             listarToolStripMenuItem1.Size = new Size(180, 22);
             listarToolStripMenuItem1.Text = "&Listar";
-            listarToolStripMenuItem1.Click += listarToolStripMenuItem1_Click;
+          
             // 
             // nveisToolStripMenuItem
             // 
