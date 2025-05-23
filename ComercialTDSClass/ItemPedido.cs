@@ -62,8 +62,7 @@ namespace ComercialTDSClass
             var cmd = Banco.Abrir();
             
             cmd.CommandText = $"update estoque " +
-                $" set quantidade = quantidade + {item.Quantidade}+
-              
+                $" set quantidade = quantidade + {item.Quantidade}" +
                 $"where produto_id = {item.Produto.Id}";
             if(cmd.ExecuteNonQuery()>0)
             {

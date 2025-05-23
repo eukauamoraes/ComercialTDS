@@ -24,11 +24,11 @@ namespace ComercialTDSClass
         public bool Ativo { get; set; }
 
         public Usuario()
-        { 
-            
-            Nivel = new (); // composição
-        
-        
+        {
+
+            Nivel = new(); // composição
+
+
         }// construtor vazio
 
         public Usuario(int id, string? nome, string? email, string? senha, Nivel? nivel, bool ativo)
@@ -127,7 +127,7 @@ namespace ComercialTDSClass
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_usuario_altera";
             cmd.Parameters.AddWithValue("spid", Id);
-            cmd.Parameters.AddWithValue("snome" ,Nome);
+            cmd.Parameters.AddWithValue("snome", Nome);
             cmd.Parameters.AddWithValue("spSenha", Senha);
             cmd.Parameters.AddWithValue("spnivel", Nivel.Id);
             // usando if ternário, sem usar conexão
@@ -145,7 +145,7 @@ namespace ComercialTDSClass
             //    return false;
 
 
-             
+
         }
 
         public static Usuario ObterPorId(int id)
@@ -155,7 +155,7 @@ namespace ComercialTDSClass
             Usuario usuario = new();
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select from * from usuarios where id = {id}";
-            var dr =  cmd.ExecuteReader();
+            var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 usuario = new(
@@ -168,7 +168,7 @@ namespace ComercialTDSClass
 
                     );
 
-                       
+
 
             }
             dr.Close();
@@ -177,7 +177,7 @@ namespace ComercialTDSClass
 
         }
 
-        public static List<Usuario> ObterLista(int inicial,int limit=1)
+        public static List<Usuario> ObterLista(int inicial, int limit = 1)
 
         {
 
@@ -195,8 +195,8 @@ namespace ComercialTDSClass
                      Nivel.ObterPorId(dr.GetInt32(4)),
                      dr.GetBoolean(5)
                         )
-                    
-                    
+
+
                     );
 
 
@@ -217,18 +217,18 @@ namespace ComercialTDSClass
 
             Usuario usuario = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select from * usuarios where email = '{email}' and senha = md5('{senha}')";
+            cmd.CommandText = $"select * from usuarios where email = '{email}' and senha = md5('{senha}')";
             var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-                usuario =  new(
+                usuario = new(
                      dr.GetInt32(0),
                      dr.GetString(1),
                      dr.GetString(2),
                      dr.GetString(3),
                      Nivel.ObterPorId(dr.GetInt32(4)),
                      dr.GetBoolean(5)
-                        
+
 
 
                     );
@@ -248,12 +248,12 @@ namespace ComercialTDSClass
 
         {
             var cmd = Banco.Abrir();
-           
+
             cmd.CommandText = $"update usuarios set senha = md5('{senha}') where email = '{email}'";
             return cmd.ExecuteNonQuery() > 0 ? true : false;
-            
-            
-         
+
+
+
 
         }
 

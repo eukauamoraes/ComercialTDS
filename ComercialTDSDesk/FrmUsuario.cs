@@ -29,27 +29,31 @@ namespace ComercialTDSDesk
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            MessageBox.Show(.ToString());
+         
         }
 
         private void bntGravar_Click(object sender, EventArgs e)
         {
             if (txtId.Text == string.Empty)
             {
-                if (txtNome.Text == string.Empty)
-                { }
-                Usuario usuario = new(txtNome.Text, txtSenha.Text,,true);
-                usuario.Inserir();
-               
+                // INSERIR
+                if (txtNome.Text != string.Empty && txtEmail.Text != string.Empty && txtSenha.Text != string.Empty && cmbNivel.SelectedItem != null)
                 {
-                   
+                    Nivel nivelSelecionado = (Nivel)cmbNivel.SelectedItem;
 
+                    Usuario usuario = new(txtNome.Text, txtEmail.Text, txtSenha.Text, nivelSelecionado, true);
+                    usuario.Inserir();
 
-                    MessageBox.Show($"Nivel atualizado com sucesso!");
-                    //btnGravar.Enabled = false;
-
+                    if (usuario.Id > 0)
+                    {
+                        MessageBox.Show("Usuário cadastrado com sucesso!");
+                        //btnGravar.Enabled = false;
+                    }
                 }
+
+
             }
         }
+        }
     }
-}
+

@@ -13,11 +13,11 @@ namespace ComercialTDSClass
         public Cliente Cliente { get; set; }
         public DateTime Data { get; set; }
         public string ?Status { get; set; }
-        public bool Desconto { get;set; }
+        public double Desconto { get;set; }
         public List<ItemPedido>? Items { get; set; }
         public Pedido() { }
 
-        public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status,bool desconto)
+        public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status,double desconto)
         {
             Id = id;
             Usuario = usuario;
@@ -33,13 +33,13 @@ namespace ComercialTDSClass
             Cliente = cliente;
 
         }
-        public Pedido(int id, string status, bool desconto)
+        public Pedido(int id, string status, double desconto)
         {
             Id = id;
             Status = status;
             Desconto = desconto;
         }
-        public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status, bool desconto,List<ItemPedido>items)
+        public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status, double desconto,List<ItemPedido>items)
         {
             Id = id;
             Usuario = usuario;
@@ -51,21 +51,81 @@ namespace ComercialTDSClass
         }
         public void Insert()
         {
-            
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_pedido_insert";
+            cmd.Parameters.AddWithValue("spusuario_id", Cliente.Id);
+            cmd.Parameters.AddWithValue("spclinete_id", Cliente.Id);
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
+
         }
         public bool Atualizar()
         {
-            return true;
+           
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_pedido_update";
+            cmd.Parameters.AddWithValue("spid",Id);
+            cmd.Parameters.AddWithValue("spstatus", Status);
+            cmd.Parameters.AddWithValue("spdesconto", Desconto);
+            bool atalizado = cmd.ExecuteNonQuery() > 0 ? true : false;
+            cmd.Connection.Close();
+
+
+            return atalizado;
         }
         public static Pedido ObeterPorId(int id)
         {
-            Pedido pedido = new Pedido();
+            Pedido pedido = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from pedido where id = {id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())   
+            {
+                pedido = new(
+                    dr.GetInt32(0),
+                    Usuario.ObterPorId(dr.GetInt32(1)),
+                    Cliente.ObterPorId(dr.GetInt32(2)),
+                    dr.GetDateTime(3),
+                    dr.GetString(4),
+                    dr.GetDouble(5),
+                    ItemPedido.ObterListaPorPedidoId(dr.GetInt32(0))
+                    );
+                    
+
+
+            }
+            dr.Close();
+            cmd.Connection.Close();
             return pedido;
         }
         public static List<Pedido>ObterLista()
         {
             List<Pedido> pedidos = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from pedido";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                 pedidos.Add ( new(
+                    dr.GetInt32(0),
+                    Usuario.ObterPorId(dr.GetInt32(1)),
+                    Cliente.ObterPorId(dr.GetInt32(2)),
+                    dr.GetDateTime(3),
+                    dr.GetString(4),
+                    dr.GetDouble(5),
+                    ItemPedido.ObterListaPorPedidoId(dr.GetInt32(0))
+                    )
 
+                    
+                  );
+
+
+
+            }
+            dr.Close();
+            cmd.Connection.Close();
 
             return pedidos;
         }
