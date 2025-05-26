@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +20,7 @@ namespace ComercialTDSDesk
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
-            txtUsuario.Text = $"{Program.UsuarioLogado.Id}";
-        }
-
-        private void FrmPedido_Load_1(object sender, EventArgs e)
-        {
-
+            txtUsuario.Text = $"{Program.UsuarioLogado.Id} - {Program.UsuarioLogado.Nome}";
         }
 
         private void txtIdCliente_TextChanged(object sender, EventArgs e)
@@ -39,58 +33,39 @@ namespace ComercialTDSDesk
                     txtNomeCliente.Text = cliente.Nome;
                 }
 
-
             }
         }
 
-        private void btnInserirPedido_Click(object sender, EventArgs e)
+        private void btnInserePedido_Click(object sender, EventArgs e)
         {
-            Pedido pedido = new Pedido(Program.UsuarioLogado, Cliente.ObterPorId(int.Parse(txtIdCliente.Text)));
-            pedido.Insert();
+            Pedido pedido = new(Program.UsuarioLogado, Cliente.ObterPorId(int.Parse(txtIdCliente.Text)));
+            pedido.Inserir();
             if (pedido.Id > 0)
             {
                 txtIdPedido.Text = pedido.Id.ToString();
                 grbIndentificacao.Enabled = false;
                 grbItens.Enabled = true;
             }
-        }
-  
-
-        private void grbIndentificacao_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grbItens_Enter(object sender, EventArgs e)
-        {
 
         }
 
         private void txtCodBar_TextChanged(object sender, EventArgs e)
         {
-            var produto = Produto.ObterPorcodBar(txtCodBar.Text);
-
-        }
-
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
-        {
             if (txtCodBar.Text.Length > 6)
             {
                 var produto = Produto.ObterPorcodBar(txtCodBar.Text);
-                if (produto.Id > 0)
+                if (produto.Id == 0)
                 {
                     produto = Produto.ObterPorId(int.Parse(txtCodBar.Text));
 
                 }
+                txtIdProd.Text = produto.Id.ToString();
                 txtDescricao.Text = produto.Descricao;
-                txtValorUnit.Text = produto.ValorUnit.ToString("R$ ##.00");
-                label4.Text = $"R${produto.ValorUnit * produto.ClasseDesconto}";
-
+                txtValorUnit.Text = produto.ValorUnit.ToString("R$##.00");
+                label4.Text = $"R$ {produto.ValorUnit * produto.ClasseDesconto}";
             }
-        }
 
-        private void txtIdProd_TextChanged(object sender, EventArgs e)
-        {
+
 
         }
 
@@ -101,24 +76,21 @@ namespace ComercialTDSDesk
                 Produto.ObterPorId(int.Parse(txtIdProd.Text)),
                 double.Parse(txtQuantidade.Text),
                 double.Parse(txtDescontoItem.Text)
-
-           );
-            ItemPedido.Inserir();
+                );
+            itemPedido.Inserir();
             if (itemPedido.Id > 0)
             {
-                CarregarItems(int pedidoID);
+                CarregarItens(int.Parse(txtIdPedido.Text));
             }
         }
-
-        private void CarregarItems(int pedidoID)
+        private void CarregarItens(int pedidoId)
         {
-            var Itens = ItemPedido.ObterListaPorPedidoId(pedidoID);
+            var itens = ItemPedido.ObterListaPorPedidoId(pedidoId);
             dgvItensPedido.Rows.Clear();
             int linha = 0;
-            double subTotal, descontos = 0;
-            double desconto = 0;
-
-            foreach (var item in Itens)
+            double subTotal = 0;
+            double descontos = 0;
+            foreach (var item in itens)
             {
                 dgvItensPedido.Rows.Add();
                 dgvItensPedido.Rows[linha].Cells[0].Value = $"#{(linha + 1).ToString().PadLeft(2, '0')}";
@@ -127,25 +99,24 @@ namespace ComercialTDSDesk
                 dgvItensPedido.Rows[linha].Cells[3].Value = item.ValorUnit;
                 dgvItensPedido.Rows[linha].Cells[4].Value = item.Quantidade;
                 dgvItensPedido.Rows[linha].Cells[5].Value = item.Desconto;
-                descontos = +item.Desconto;
+                descontos += item.Desconto;
                 double totalItem = item.ValorUnit * item.Quantidade - item.Desconto;
-
-                dgvItensPedido.Rows[linha].Cells[6].Value = item.ValorUnit * item.Quantidade - item.Desconto;
-                subTotal += totalItem; // subTotal = SubTotal + totalItem;
+                dgvItensPedido.Rows[linha].Cells[6].Value = totalItem;
+                subTotal += totalItem; // subtotal = subtotal + totalitem
                 linha++;
             }
-            txtSubTotal.Text = subTotal.ToString();
-            txtSubTotal.Text = subTotal.ToString();
-            txtDescontoItem.Text = descontos.ToString();
-            txtTotal.Text = (subTotal - descontos).ToString();
+            txtSubTotalItens.Text = subTotal.ToString();
+            txtSubTotal.Text = (subTotal + descontos).ToString();
+            txtDescontoItens.Text = descontos.ToString();
+            txtTotal.Text = subTotal.ToString();
         }
 
         private void txtIdPedido_KeyDown(object sender, KeyEventArgs e)
         {
-            // verificar se a tecla enter foi pressionada 
+            // verificar se a tecla enter foi pressionada
             if (e.KeyCode == Keys.Enter)
             {
-                var pedido = Pedido.ObeterPorId(int.Parse(txtIdPedido.Text));
+                var pedido = Pedido.ObterPorId(int.Parse(txtIdPedido.Text));
                 if (pedido.Id > 0)
                 {
                     if (pedido.Status == "A")
@@ -153,44 +124,25 @@ namespace ComercialTDSDesk
                         grbIndentificacao.Enabled = false;
                         txtNomeCliente.Text = $"{pedido.Cliente.Id} - {pedido.Cliente.Nome}";
                         txtUsuario.Text = $"{pedido.Usuario.Id} - {pedido.Usuario.Nome}";
-                        CarregarItems(pedido.Id);
+                        grbItens.Enabled = true;
+                        CarregarItens(pedido.Id);
                     }
-                    else
+                    else if (pedido.Status == "F")
                     {
-                        var resposta = MessageBox.Show("O pedido esta fechado .\nDeseja Reabrir",
-                            "Pedido", MessageBox.yesNo,
-
-
-                            )
-                            if (resposta == DialogResult.Yes)
+                        var resposta = MessageBox.Show(
+                            "O pedido está fechado.\nDeseja Reabrir? ", // texto da mensagem 
+                            "Pedido", MessageBoxButtons.YesNo, // botões da mensagem 
+                            MessageBoxIcon.Question, //ícone da mensagem
+                            MessageBoxDefaultButton.Button2 // define qual botão aparecerá ativo na caixa
+                            );
+                        if (resposta == DialogResult.Yes)
                         {
-                            pedido.Status = "A"; // A = Aberto
+                            pedido.Status = "A";
                             pedido.Atualizar();
                         }
-
                     }
 
-
-
                 }
-            }
-        }
-
-        private void txtDescontoPedido_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Pedido pedido = Pedido.ObeterPorId(int.Parse(txtIdPedido.Text));
-            pedido.Desconto = double.Parse(txtDescontoPedido.Text);
-            pedido.Status = "F";
-            if (pedido.Atualizar())
-            {
-                MessageBox.Show($"pedido{pedido.Id} foi fechado com succeso. \n");
-
-
             }
         }
 
@@ -198,10 +150,31 @@ namespace ComercialTDSDesk
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtTotal.Text = (double.Parse(txtSubTotal.Text) - double.Parse(txtDescontoPedido.Text)).ToString("R$ ##.00");
+                txtTotal.Text = (double.Parse(txtSubTotalItens.Text) - double.Parse(txtDescontoPedido.Text)).ToString("##.00");
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Pedido pedido = Pedido.ObterPorId(int.Parse(txtIdPedido.Text));
+            pedido.Desconto = double.Parse(txtDescontoPedido.Text);
+            pedido.Status = "F";
+            if (pedido.Atualizar())
+            {
+                MessageBox.Show($"Pedido {pedido.Id} foi Fechado com sucesso.\n");
+
+                dgvItensPedido.Rows.Clear();
+                txtIdPedido.Clear();
+                txtIdPedido.Focus();
+                //.... limpar todos
+
+
+            }
+        }
+
+        private void FrmPedido_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
-
-

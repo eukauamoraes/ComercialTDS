@@ -177,7 +177,6 @@
             grbItens.TabIndex = 1;
             grbItens.TabStop = false;
             grbItens.Text = "Itens do Pedido";
-            grbItens.Enter += grbItens_Enter;
             // 
             // txtIdProd
             // 
@@ -185,7 +184,6 @@
             txtIdProd.Name = "txtIdProd";
             txtIdProd.Size = new Size(110, 23);
             txtIdProd.TabIndex = 16;
-            txtIdProd.TextChanged += txtIdProd_TextChanged;
             // 
             // label4
             // 
@@ -407,11 +405,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.RoyalBlue;
             label1.Location = new Point(170, 23);
             label1.Name = "label1";
-            label1.Size = new Size(197, 33);
+            label1.Size = new Size(169, 31);
             label1.TabIndex = 2;
             label1.Text = "Novo Pedido";
             // 
@@ -485,7 +483,6 @@
             txtDescontoPedido.TabIndex = 8;
             txtDescontoPedido.Text = "0,00";
             txtDescontoPedido.TextAlign = HorizontalAlignment.Right;
-            txtDescontoPedido.TextChanged += txtDescontoPedido_TextChanged;
             txtDescontoPedido.KeyDown += txtDescontoPedido_KeyDown;
             // 
             // label11

@@ -19,7 +19,7 @@ namespace ComercialTDSClass
         public int Id { get; set; }
         public string? CodBarras { get; set; }
         public string? Descricao { get; set; }
-        public double? ValorUnit { get; set; }
+        public double ValorUnit { get; set; }
         public string? UnidadeVenda { get; set; }
         public Categoria? Categoria { get; set; }
         public double? EstoqueMinimo { get; set; }
@@ -36,7 +36,7 @@ namespace ComercialTDSClass
 
 
 
-        public Produto(int id, string? codBarras, string? descricao, double? valorUnit, string? unidadeVenda, Categoria? categoria, double? estoqueMinimo, double? classedesconto, byte[] imagem, DateTime dataCard, bool descontinuado)
+        public Produto(int id, string? codBarras, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double? estoqueMinimo, double? classedesconto, byte[] imagem, DateTime dataCard, bool descontinuado)
         {
             Id = id;
             CodBarras = codBarras;
@@ -51,7 +51,7 @@ namespace ComercialTDSClass
             Descontinuado = descontinuado;
         }
 
-        public Produto(string? codBarras, string? descricao, double? valorUnit, string? unidadeVenda, Categoria? categoria, double? estoqueMinimo, double? classedesconto, byte[] imagem, DateTime dataCard, bool descontinuado)
+        public Produto(string? codBarras, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double? estoqueMinimo, double? classedesconto, byte[] imagem, DateTime dataCard, bool descontinuado)
         {
 
             CodBarras = codBarras;
@@ -65,7 +65,7 @@ namespace ComercialTDSClass
             DataCard = dataCard;
             Descontinuado = descontinuado;
         }
-        public Produto(string? codBarras, string? descricao, double? valorUnit, string? unidadeVenda, Categoria? categoria, double? estoqueMinimo, double? classedesconto, byte[] imagem)
+        public Produto(string? codBarras, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double? estoqueMinimo, double? classedesconto, byte[] imagem)
         {
 
             CodBarras = codBarras;
