@@ -89,7 +89,7 @@ namespace ComercialTDSDesk
         {
             AssociaPanel(new FrmCategoria());
         }
-    
+
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -101,7 +101,10 @@ namespace ComercialTDSDesk
 
         }
 
-      
+        private void pnlCentral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
