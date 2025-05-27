@@ -76,6 +76,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(191, 23);
             txtNome.TabIndex = 15;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // btnCancelar
             // 

@@ -20,7 +20,7 @@ namespace ComercialTDSDesk
 
         private void FrmCategoria_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -50,6 +50,11 @@ namespace ComercialTDSDesk
 
                 }
             }
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
