@@ -40,14 +40,14 @@ namespace ComercialTDSDesk
                 MessageBox.Show("Emial e/ou senha incorretos \n ou usuario não cadastrado");
                 txtEmail.Focus();
                 txtEmail.SelectAll();
-                
+
             }
-          
+
         }
 
         private void bntCancelar_Click(object sender, EventArgs e)
         {
-            if (bntCancelar.Text ==  "&Voltar")
+            if (bntCancelar.Text == "&Voltar")
                 Close();
             else
                 Application.Exit();
@@ -69,6 +69,11 @@ namespace ComercialTDSDesk
                 }
 
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

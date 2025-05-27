@@ -82,6 +82,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(133, 23);
             txtNome.TabIndex = 4;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // txtSenha
             // 

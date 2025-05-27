@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             bntEntrar = new Button();
             bntCancelar = new Button();
             txtEmail = new TextBox();
@@ -36,11 +37,15 @@
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // bntEntrar
             // 
-            bntEntrar.Location = new Point(269, 276);
+            bntEntrar.Location = new Point(260, 270);
             bntEntrar.Name = "bntEntrar";
             bntEntrar.Size = new Size(75, 25);
             bntEntrar.TabIndex = 0;
@@ -50,7 +55,7 @@
             // 
             // bntCancelar
             // 
-            bntCancelar.Location = new Point(431, 277);
+            bntCancelar.Location = new Point(422, 271);
             bntCancelar.Name = "bntCancelar";
             bntCancelar.Size = new Size(75, 25);
             bntCancelar.TabIndex = 1;
@@ -60,15 +65,16 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(269, 162);
+            txtEmail.Location = new Point(261, 156);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(237, 23);
             txtEmail.TabIndex = 2;
             txtEmail.Text = "Email";
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(269, 220);
+            txtSenha.Location = new Point(260, 214);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(237, 23);
             txtSenha.TabIndex = 3;
@@ -77,7 +83,7 @@
             // chkExibeSEnha
             // 
             chkExibeSEnha.AutoSize = true;
-            chkExibeSEnha.Location = new Point(417, 251);
+            chkExibeSEnha.Location = new Point(408, 245);
             chkExibeSEnha.Name = "chkExibeSEnha";
             chkExibeSEnha.Size = new Size(90, 20);
             chkExibeSEnha.TabIndex = 4;
@@ -88,7 +94,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(310, 97);
+            label1.Location = new Point(12, 457);
             label1.Name = "label1";
             label1.Size = new Size(141, 14);
             label1.TabIndex = 5;
@@ -97,22 +103,41 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(333, 127);
+            label2.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(311, 94);
             label2.Name = "label2";
-            label2.Size = new Size(84, 15);
+            label2.Size = new Size(150, 22);
             label2.TabIndex = 6;
             label2.Text = "Acesso System";
             // 
             // button1
             // 
-            button1.Location = new Point(557, 337);
+            button1.Location = new Point(422, 321);
             button1.Name = "button1";
-            button1.Size = new Size(84, 25);
+            button1.Size = new Size(76, 25);
             button1.TabIndex = 7;
             button1.Text = "info";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
+            pictureBox1.Image = Properties.Resources.icons8_customer_32__1_;
+            pictureBox1.Location = new Point(224, 146);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(30, 33);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.icons8_password_321;
+            pictureBox2.Location = new Point(223, 205);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(31, 32);
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
             // 
             // FrmLogin
             // 
@@ -121,6 +146,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = bntCancelar;
             ClientSize = new Size(800, 480);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -135,6 +162,8 @@
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Load += FrmLogin_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,5 +178,7 @@
         private Label label1;
         private Label label2;
         private Button button1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

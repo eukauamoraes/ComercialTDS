@@ -93,7 +93,7 @@ namespace ComercialTDSDesk
             // MessageBox.Show({$"nivel.Id} {nivel.Nome} {nivel.Sigla}");
         }
 
-     
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -114,6 +114,11 @@ namespace ComercialTDSDesk
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
         {
 
         }
