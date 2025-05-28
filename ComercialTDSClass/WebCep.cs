@@ -1,41 +1,4 @@
-﻿WebService CEPExemplosCódigosContribuir
-foi bom para você?
-Faça um doação para o FAP
-(fundo de amparo ao programador, que sou eu)
-PayPal - The safer, easier way to pay online! 
-
-
-buscar cep
-CEP: 
- 
-
-
-Nesta página você encontra exemplo de código para busca de endereços através do CEP através do nosso WebService nas seguintes linguages:
-Adobe Air
-ASP
-C++
-Cobol
-Delphi 7
-Flash
-Java
-.NET C#
-.NET VB
-Perl
-PHP
-Python
-Ruby
-
-Busca de CEP em PHP
-Busca de CEP em ASP
-Busca de CEP em Flash
-Busca de CEP em Adobe Air
-Busca de CEP em .NET C#
-Download exemplo ASP.NET com C# utilizando AJAX, Framework 3.5 por Gustavo Henrique (71 kb)
-
-
-Abaixo, exemplo enviado por Valter Henrique Junior utilizando XML
-view plainprint?
-//Criado por: Valter Henrique Junior  
+﻿using System.Data;
 using System;  
 using System.Collections.Generic;  
 using System.Text;  
@@ -152,23 +115,5 @@ namespace NcMaster
         #endregion
     }
 }
-Busca de CEP em .NET VB
-Busca de CEP em Python
-Busca de CEP em Ruby
-Busca de CEP em Perl
-Busca de CEP em Java
-Busca de CEP em C++
-Busca de CEP em Delphi 7
-Busca de CEP em Cobol
 
-Quer ajuda um pouco?
-E ai cara, sua linguagem de programação não está aqui?
-Mande para nossa equipe colocar aqui e ajude outros programadores que nem você!!! Larga dessa de só sugar na internet e ajuda um pouco!
-
-Contribua com o site, envie seu código
-
-website monitoring service
-
-RIO GRANDE DO SUL BRASIL
-bombando desde 12/2005 - 193.538.729 requisições até o momento
 

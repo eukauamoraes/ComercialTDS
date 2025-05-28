@@ -15,10 +15,10 @@ namespace ComercialTDSClass
 
         public int ClienteId { get; set; }
 
-        public int Cep { get; set; }
+        public string?Cep { get; set; }
 
         public string? Logradouro { get; set; }
-        public int  Numero { get; set; }
+        public string? Numero { get; set; }
 
         public string? Complemento { get; set; }
 
@@ -35,7 +35,7 @@ namespace ComercialTDSClass
 
 
 
-        public Endereco(int id, int clienteId, int cep, string? logradouro,int numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
+        public Endereco(int id, int clienteId, string?cep, string? logradouro,string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
         {
             Id = id;
             ClienteId = clienteId;
@@ -48,7 +48,7 @@ namespace ComercialTDSClass
             Uf = uf;
             TipoEndereco = tipoEndereco;
         }
-        public Endereco( int clienteId, int cep, string? logradouro, int numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
+        public Endereco( int clienteId, string?cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
         {
           
             ClienteId = clienteId;
@@ -61,7 +61,7 @@ namespace ComercialTDSClass
             Uf = uf;
             TipoEndereco = tipoEndereco;
         }
-        public Endereco( int cep, string? logradouro, int numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
+        public Endereco( string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
         {
 
             
@@ -74,7 +74,7 @@ namespace ComercialTDSClass
             Uf = uf;
             TipoEndereco = tipoEndereco;
         }
-        public Endereco( string? logradouro, int numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
+        public Endereco( string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
         {
 
 
@@ -137,9 +137,9 @@ namespace ComercialTDSClass
             {
                 enderecos.Add(new(dr.GetInt32(0),
                             dr.GetInt32(1),
-                            dr.GetInt32(2),
+                            dr.GetString(2),
                             dr.GetString(3),
-                            dr.GetInt32(4),
+                            dr.GetString(4),
                             dr.GetString(5),
                             dr.GetString(6),
                             dr.GetString(7),
@@ -164,9 +164,9 @@ namespace ComercialTDSClass
             {
                 enderecos.Add(new(dr.GetInt32(0),
                             dr.GetInt32(1),
-                            dr.GetInt32(2),
+                            dr.GetString(2),
                             dr.GetString(3),
-                            dr.GetInt32(4),
+                            dr.GetString(4),
                             dr.GetString(5),
                             dr.GetString(6),
                             dr.GetString(7),

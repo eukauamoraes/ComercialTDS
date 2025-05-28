@@ -35,12 +35,10 @@
             txtEmail = new TextBox();
             txtCpf = new TextBox();
             txtTelefone = new TextBox();
-            txtDatanasc = new TextBox();
             label1 = new Label();
             label2 = new Label();
             Cpf = new Label();
             label3 = new Label();
-            label4 = new Label();
             txtLogradoura = new TextBox();
             txtNumero = new TextBox();
             txtComplemento = new TextBox();
@@ -58,22 +56,28 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             MaskCep = new MaskedTextBox();
+            txtId = new TextBox();
+            txtClienteId = new TextBox();
+            label13 = new Label();
+            c = new Label();
+            dateCliente = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnGravar
             // 
-            btnGravar.Location = new Point(130, 380);
+            btnGravar.Location = new Point(130, 398);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(75, 23);
             btnGravar.TabIndex = 0;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(270, 379);
+            btnCancelar.Location = new Point(252, 397);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 24);
             btnCancelar.TabIndex = 1;
@@ -107,14 +111,6 @@
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(119, 23);
             txtTelefone.TabIndex = 5;
-            // 
-            // txtDatanasc
-            // 
-            txtDatanasc.Location = new Point(131, 346);
-            txtDatanasc.Name = "txtDatanasc";
-            txtDatanasc.Size = new Size(116, 23);
-            txtDatanasc.TabIndex = 6;
-            txtDatanasc.TextChanged += txtDatanasc_TextChanged;
             // 
             // label1
             // 
@@ -151,15 +147,6 @@
             label3.Size = new Size(52, 15);
             label3.TabIndex = 11;
             label3.Text = "Telefone";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(130, 328);
-            label4.Name = "label4";
-            label4.Size = new Size(112, 15);
-            label4.TabIndex = 12;
-            label4.Text = "Data de nascimento";
             // 
             // txtLogradoura
             // 
@@ -300,11 +287,59 @@
             MaskCep.TabIndex = 31;
             MaskCep.MaskInputRejected += MaskCep_MaskInputRejected;
             // 
+            // txtId
+            // 
+            txtId.Location = new Point(515, 415);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(121, 23);
+            txtId.TabIndex = 32;
+            txtId.Visible = false;
+            // 
+            // txtClienteId
+            // 
+            txtClienteId.Location = new Point(667, 415);
+            txtClienteId.Name = "txtClienteId";
+            txtClienteId.Size = new Size(121, 23);
+            txtClienteId.TabIndex = 33;
+            txtClienteId.Visible = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(515, 397);
+            label13.Name = "label13";
+            label13.Size = new Size(17, 15);
+            label13.TabIndex = 34;
+            label13.Text = "Id";
+            label13.Visible = false;
+            // 
+            // c
+            // 
+            c.AutoSize = true;
+            c.Location = new Point(667, 397);
+            c.Name = "c";
+            c.Size = new Size(54, 15);
+            c.TabIndex = 35;
+            c.Text = "ClienteId";
+            c.Visible = false;
+            // 
+            // dateCliente
+            // 
+            dateCliente.Location = new Point(263, 258);
+            dateCliente.Name = "dateCliente";
+            dateCliente.Size = new Size(123, 23);
+            dateCliente.TabIndex = 36;
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dateCliente);
+            Controls.Add(c);
+            Controls.Add(label13);
+            Controls.Add(txtClienteId);
+            Controls.Add(txtId);
             Controls.Add(MaskCep);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -322,12 +357,10 @@
             Controls.Add(txtComplemento);
             Controls.Add(txtNumero);
             Controls.Add(txtLogradoura);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(Cpf);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(txtDatanasc);
             Controls.Add(txtTelefone);
             Controls.Add(txtCpf);
             Controls.Add(txtEmail);
@@ -351,12 +384,10 @@
         private TextBox txtEmail;
         private TextBox txtCpf;
         private TextBox txtTelefone;
-        private TextBox txtDatanasc;
         private Label label1;
         private Label label2;
         private Label Cpf;
         private Label label3;
-        private Label label4;
         private TextBox txtLogradoura;
         private TextBox txtNumero;
         private TextBox txtComplemento;
@@ -374,5 +405,10 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private MaskedTextBox MaskCep;
+        private TextBox txtId;
+        private TextBox txtClienteId;
+        private Label label13;
+        private Label c;
+        private DateTimePicker dateCliente;
     }
 }

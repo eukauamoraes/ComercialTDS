@@ -105,6 +105,11 @@ namespace ComercialTDSDesk
         {
 
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AssociaPanel(new FrmCliente());  
+        }
     }
 }
 

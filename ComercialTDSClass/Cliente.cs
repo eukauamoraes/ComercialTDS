@@ -25,17 +25,28 @@ namespace ComercialTDSClass
         public Cliente() { }
      
         //Contrutor utilizado para fazer o insert 
-        public Cliente(int id, string? nome, string? cpf, string? telefone, string? email, DateTime? dataNascimento, DateTime? dataCadastro, bool ativo, List<Endereco>? enderecos)
+        public Cliente( string? nome, string? cpf, string? telefone, string? email, DateTime? dataNascimento)
         {
-            Id = id;
+           
             Nome =nome;
             Cpf = cpf;
             Telefone = telefone;
             Email = email;
-          
+            DataNascimento = dataNascimento; 
         }
-        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? dataNascimento, DateTime? dataCadastro, bool ativo, List<Endereco>? enderecos)
+        public Cliente(int id,string? nome, string? cpf, string? telefone, string? email, DateTime? dataNascimento)
         {
+            Id = id;
+            Nome = nome;
+            Cpf = cpf;
+            Telefone = telefone;
+            Email = email;
+            DataNascimento = dataNascimento;
+        }
+
+        public Cliente(int id ,string? nome, string? cpf, string? telefone, string? email, DateTime? dataNascimento, DateTime? dataCadastro, bool ativo, List<Endereco>? enderecos)
+        {
+            Id = Id;
             Nome = nome;
             Cpf = cpf;
             Telefone = telefone;
@@ -45,8 +56,9 @@ namespace ComercialTDSClass
             Ativo = ativo;
             Enderecos = enderecos;
         }
-        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? dataNascimento, DateTime? dataCadastro, bool ativo)
+        public Cliente(int id,string? nome, string? cpf, string? telefone, string? email, DateTime? dataNascimento, DateTime? dataCadastro, bool ativo)
         {
+            Id = Id;
             Nome = nome;
             Cpf = cpf;
             Telefone = telefone;
@@ -78,7 +90,7 @@ namespace ComercialTDSClass
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("spid", Id);
             cmd.Parameters.AddWithValue("spnome", Nome);
-            
+            cmd.Parameters.AddWithValue("spcpf", Cpf);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
             cmd.Parameters.AddWithValue("spdtanasc", DataNascimento);
             return cmd.ExecuteNonQuery() > 0 ? true : false;
@@ -97,16 +109,20 @@ namespace ComercialTDSClass
                 cliente = new(
 
 
-                          dr.GetInt32(0),
-                          dr.GetString(1),
-                          dr.GetString(2),
-                          dr.GetString(3),
-                          dr.GetString(4),
-                          dr.GetDateTime(4),
-                          dr.GetDateTime(5),
-                          dr.GetBoolean(6),
-                          Endereco.ObterListaPortCLienteID(dr.GetInt32(0))
-                      );
+                       dr.GetInt32(0),
+                       dr.GetString(1),
+                       dr.GetString(2),
+                       dr.GetString(3),
+                       dr.GetString(4),
+                       dr.GetDateTime(5),
+                       dr.GetDateTime(6),
+                       dr.GetBoolean(7)
+
+
+
+
+                     
+                );
             }
             dr.Close();
             cmd.Connection.Close();
@@ -121,15 +137,16 @@ namespace ComercialTDSClass
             while (dr.Read())
             {
                 clientes.Add(new(
-                             dr.GetInt32(0),
-                            dr.GetString(1),
-                            dr.GetString(2),
-                            dr.GetString(3),
-                            dr.GetString(4),
-                            dr.GetDateTime(4),
-                            dr.GetDateTime(5),
-                            dr.GetBoolean(6),
-                            Endereco.ObterListaPortCLienteID(dr.GetInt32(0)
+                      
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetDateTime(5),
+                    dr.GetDateTime(6),
+                    dr.GetBoolean(7
+                    
 
                         )
                     ));

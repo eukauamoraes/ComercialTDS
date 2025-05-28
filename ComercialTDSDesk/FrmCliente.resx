@@ -120,18 +120,18 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAI+SURBVHhe7Zo9SgRBEIVfpCZewMjUwBsYGgnqDcQDmKqh
-        RzEx00REREw9gRfwBl5BedANRW+PM9V/M93TDz4WZqdq9n3uwo4K9PTMmR3DKrMF4AXA+xol2PK/hlVJ
-        cMuvSsJQ+VVIYLE3p/CnQR7jOc1J8P3kbVE+99zyO+G/8rcA7lqWMFbeHmtSwtTyTUrQlm9KQmj5JiTE
-        lq9aQqrylqokpC5vqUJCrvKWRUvIXd6ySAmlylsWJYEXdG9sXgFsmxfqvvgjd8GEcMbdw928Bq8ljxe9
-        gdKWJ/sArgF8TITncsbdM7uE0Lc9y9x7jg/Bc4cEkFk+DqHlSWoBpKiEmPIkhwBSREJseZJLAMkqIUV5
-        klMAySIhVXmSWwBJKiFleVJCAEkiIXV5UkoAiZKQozwpKYAESchVnpQWQNQSLpwTx77eamCZEyNyCjw3
-        VgAZ+trMrhu5FCfY8qeepSHcADhWwhl3Twjs4Epg141YAfKmQkqpFVtWfhwGBbh3VC0JYKwEr4AD81aR
-        aU0Aw47sOiktClClC/AsrI1ZBfwA2HWXKsJZ7nD3aphVwLfZ8+D5vd8YnGG4w92rYRECQkrEzEq6ANFH
-        nS7As1BDTImYWUkXIPqo0wV4FmqIKREzK6lCwBeAK/OonR2jCgFn5rzzgNkxqhDwCOAQwFPA7BhVCPAR
-        MyvpAkQfdboAz0INMSViZiVdgOijThfgWaghpkTMrKQLEH3UWb2APc/f7DTYf5Dko/vcGDGzEnbo6RnI
-        HwIYFwn9i7A6AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAj5JREFUeF7tmj1KBEEQhV+kJl7AyNTAGxgaCeoNxAOYqqFHMTHTRERETD2BF/AG
+        XkF50A1Fb48z1X8z3dMPPhZmp2r2fe7Cjgr09MyZHcMqswXgBcD7GiXY8r+GVUlwy69KwlD5VUhgsTen
+        8KdBHuM5zUnw/eRtUT733PI74b/ytwDuWpYwVt4ea1LC1PJNStCWb0pCaPkmJMSWr1pCqvKWqiSkLm+p
+        QkKu8pZFS8hd3rJICaXKWxYlgRd0b2xeAWybF+q++CN3wYRwxt3D3bwGryWPF72B0pYn+wCuAXxMhOdy
+        xt0zu4TQtz3L3HuOD8FzhwSQWT4OoeVJagGkqISY8iSHAFJEQmx5kksAySohRXmSUwDJIiFVeZJbAEkq
+        IWV5UkIASSIhdXlSSgCJkpCjPCkpgARJyFWelBZA1BIunBPHvt5qYJkTI3IKPDdWABn62syuG7kUJ9jy
+        p56lIdwAOFbCGXdPCOzgSmDXjVgB8qZCSqkVW1Z+HAYFuHdULQlgrASvgAPzVpFpTQDDjuw6KS0KUKUL
+        8CysjVkF/ADYdZcqwlnucPdqmFXAt9nz4Pm93xicYbjD3athEQJCSsTMSroA0UedLsCzUENMiZhZSRcg
+        +qjTBXgWaogpETMrqULAF4Ar86idHaMKAWfmvPOA2TGqEPAI4BDAU8DsGFUI8BEzK+kCRB91ugDPQg0x
+        JWJmJV2A6KNOF+BZqCGmRMyspAsQfdRZvYA9z9/sNNh/kOSj+9wYMbMSdujpGcgfAhgXCf2LsDoAAAAA
+        SUVORK5CYII=
 </value>
   </data>
 </root>
